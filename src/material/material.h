@@ -22,11 +22,9 @@
 
 #pragma once
 
-#include <structs/pmd.h>
-
-#include <math/vector.h>
-
-#include <pix/pix.h>
+#include "../math/vector.h"
+#include "../pix/pix.h"
+#include "../structs/pmd.h"
 
 class Material
 {

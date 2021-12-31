@@ -22,7 +22,7 @@
 
 #pragma once
 
-#include <structs/pmc.h>
+#include "../structs/pmc.h"
 
 class Collision
 {

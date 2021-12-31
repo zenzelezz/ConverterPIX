@@ -20,7 +20,7 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
 
 #include "token.h"
 

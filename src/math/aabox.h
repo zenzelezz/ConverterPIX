@@ -22,7 +22,7 @@
 
 #pragma once
 
-#include <math/vector.h>
+#include "../math/vector.h"
 
 #pragma pack(push, 1)
 

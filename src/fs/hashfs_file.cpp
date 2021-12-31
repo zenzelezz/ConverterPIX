@@ -20,11 +20,10 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
-
-#include "hashfs_file.h"
+#include "../prerequisites.h"
 
 #include "hashfilesystem.h"
+#include "hashfs_file.h"
 
 HashFsFile::HashFsFile(const String &filepath, HashFileSystem *filesystem, const prism::hashfs_entry_t *header)
 	: m_filepath(filepath)

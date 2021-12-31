@@ -22,12 +22,12 @@
 
 #pragma once
 
-#include "bone.h"
-#include "piece.h"
-#include "part.h"
-#include "locator.h"
+#include "../material/material.h"
 
-#include <material/material.h>
+#include "bone.h"
+#include "locator.h"
+#include "part.h"
+#include "piece.h"
 
 /* forward declarations */
 class Look;

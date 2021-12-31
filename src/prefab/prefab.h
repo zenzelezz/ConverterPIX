@@ -22,17 +22,17 @@
 
 #pragma once
 
-#include "node.h"
+#include "../math/vector.h"
+
 #include "curve.h"
-#include "sign.h"
-#include "semaphore.h"
-#include "spawn_point.h"
+#include "intersection.h"
 #include "map_point.h"
+#include "node.h"
+#include "semaphore.h"
+#include "sign.h"
+#include "spawn_point.h"
 #include "terrain_point_variant.h"
 #include "trigger_point.h"
-#include "intersection.h"
-
-#include <math/vector.h>
 
 /* forward declarations */
 class TerrainPoint;

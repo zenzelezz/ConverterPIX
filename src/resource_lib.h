@@ -22,8 +22,8 @@
 
 #pragma once
 
-#include <utils/explicit_singleton.h>
-#include <material/material.h>
+#include "material/material.h"
+#include "utils/explicit_singleton.h"
 
 class ResourceLibrary : public ExplicitSingleton<ResourceLibrary>
 {

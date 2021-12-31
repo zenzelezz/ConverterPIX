@@ -20,20 +20,19 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
-
-#include <resource_lib.h>
-#include <model/model.h>
-#include <model/animation.h>
-#include <texture/texture_object.h>
-#include <texture/texture.h>
-
-#include <structs/dds.h>
-#include <fs/file.h>
-#include <fs/sysfilesystem.h>
-#include <fs/uberfilesystem.h>
-
 #include <chrono>
+
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
+#include "../model/model.h"
+#include "../model/animation.h"
+#include "../resource_lib.h"
+#include "../structs/dds.h"
+#include "../texture/texture_object.h"
+#include "../texture/texture.h"
 
 void print_help()
 {

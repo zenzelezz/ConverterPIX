@@ -20,16 +20,16 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/uberfilesystem.h"
+#include "../resource_lib.h"
+#include "../structs/tobj.h"
+#include "../texture/texture.h"
+#include "../texture/texture_object.h"
 
 #include "material.h"
-
-#include <resource_lib.h>
-#include <structs/tobj.h>
-#include <texture/texture.h>
-#include <texture/texture_object.h>
-#include <fs/file.h>
-#include <fs/uberfilesystem.h>
 
 Material::Attribute::Attribute()
 	: m_valueType(FLOAT)

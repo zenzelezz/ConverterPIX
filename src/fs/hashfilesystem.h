@@ -22,9 +22,9 @@
 
 #pragma once
 
-#include "filesystem.h"
+#include "../structs/hashfs.h"
 
-#include <structs/hashfs.h>
+#include "filesystem.h"
 
 class HashFileSystem : public FileSystem
 {

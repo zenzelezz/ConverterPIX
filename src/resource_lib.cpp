@@ -20,12 +20,12 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "prerequisites.h"
+
+#include "fs/uberfilesystem.h"
+#include "texture/texture_object.h"
 
 #include "resource_lib.h"
-
-#include <texture/texture_object.h>
-#include <fs/uberfilesystem.h>
 
 auto ResourceLibrary::obtain(String tobjfile) -> Entry
 {

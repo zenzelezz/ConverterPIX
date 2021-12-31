@@ -22,9 +22,9 @@
 
 #pragma once
 
-#include "vector.h"
-
 #include <glm/gtc/quaternion.hpp>
+
+#include "vector.h"
 
 #pragma pack(push, 1)
 

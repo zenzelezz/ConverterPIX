@@ -63,16 +63,16 @@
 //
 #include "utils/types.h"
 
-#include <version.h>
+#include "version.h"
 
 #define GLM_FORCE_RADIANS
 #include <glm/glm.hpp>
 
 #include <fmt/format.h>
 #include <fmt/printf.h>
-#include <fmt/posix.h>
+#include <fmt/os.h>
 
-#include <zlib/zlib.h>
+#include <zlib.h>
 
 using String		= std::string;
 using WString		= std::wstring;
@@ -103,7 +103,7 @@ using UniquePtr		= std::unique_ptr<T>;
 template < typename FIRST, typename SECOND >
 using Pair			= std::pair<FIRST, SECOND>;
 
-#include <callbacks.h>
+#include "callbacks.h"
 
 #define TAB		"     "
 #define SEOL	"\n"

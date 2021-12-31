@@ -20,17 +20,16 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include <zlib.h>
 
-#include "zipfilesystem.h"
+#include "../prerequisites.h"
 
-#include "sysfilesystem.h"
+#include "../structs/zip.h"
+
 #include "file.h"
+#include "sysfilesystem.h"
+#include "zipfilesystem.h"
 #include "zipfs_file.h"
-
-#include <structs/zip.h>
-
-#include <zlib/zlib.h>
 
 #ifndef FILE_ATTRIBUTE_DIRECTORY
 #define FILE_ATTRIBUTE_DIRECTORY 0x00000010

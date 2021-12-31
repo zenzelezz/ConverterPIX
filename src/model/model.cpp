@@ -20,25 +20,23 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
-
-#include "model.h"
-
-#include <fs/file.h>
-#include <fs/uberfilesystem.h>
-#include <fs/sysfilesystem.h>
-
-#include <pix/pix.h>
-#include <resource_lib.h>
-#include <texture/texture.h>
-#include <prefab/prefab.h>
-#include <model/collision.h>
-
-#include <structs/pmg_0x13.h>
-#include <structs/pmg_0x14.h>
-#include <structs/pmg_0x15.h>
-
 #include <glm/gtx/transform.hpp>
+
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
+#include "../pix/pix.h"
+#include "../prefab/prefab.h"
+#include "../resource_lib.h"
+#include "../structs/pmg_0x13.h"
+#include "../structs/pmg_0x14.h"
+#include "../structs/pmg_0x15.h"
+#include "../texture/texture.h"
+
+#include "collision.h"
+#include "model.h"
 
 using namespace prism;
 

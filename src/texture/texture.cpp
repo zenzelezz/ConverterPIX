@@ -20,11 +20,11 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
+
+#include "../resource_lib.h"
 
 #include "texture.h"
-
-#include <resource_lib.h>
 
 bool Texture::load()
 {

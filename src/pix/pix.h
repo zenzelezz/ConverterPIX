@@ -22,11 +22,10 @@
 
 #pragma once
 
-#include <fs/file.h>
-
-#include <math/vector.h>
-#include <math/quaternion.h>
-#include <math/matrix.h>
+#include "../fs/file.h"
+#include "../math/vector.h"
+#include "../math/quaternion.h"
+#include "../math/matrix.h"
 
 namespace Pix
 {

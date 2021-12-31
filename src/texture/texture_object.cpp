@@ -20,15 +20,15 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
+#include "../structs/dds.h"
+#include "../structs/tobj.h"
 
 #include "texture_object.h"
-
-#include <fs/file.h>
-#include <fs/uberfilesystem.h>
-#include <fs/sysfilesystem.h>
-#include <structs/tobj.h>
-#include <structs/dds.h>
 
 bool TextureObject::load(String filepath)
 {

@@ -20,11 +20,10 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
-
-#include "zipfs_file.h"
+#include "../prerequisites.h"
 
 #include "zipfilesystem.h"
+#include "zipfs_file.h"
 
 ZipFsFile::ZipFsFile(const String &filepath, ZipFileSystem *filesystem, const class ZipEntry *entry)
 	: m_filepath(filepath)

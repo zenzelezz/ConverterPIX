@@ -20,19 +20,20 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include <glm/gtx/transform.hpp>
+
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
+#include "../pix/pix.h"
+#include "../structs/pma_0x03.h"
+#include "../structs/pma_0x04.h"
 
 #include "animation.h"
+#include "model.h"
 
-#include <fs/file.h>
-#include <fs/sysfilesystem.h>
-#include <fs/uberfilesystem.h>
-#include <structs/pma_0x03.h>
-#include <structs/pma_0x04.h>
-#include <model/model.h>
-#include <pix/pix.h>
-
-#include <glm/gtx/transform.hpp>
 
 using namespace prism;
 

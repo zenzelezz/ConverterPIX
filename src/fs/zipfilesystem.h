@@ -22,9 +22,9 @@
 
 #pragma once
 
-#include "filesystem.h"
+#include "../structs/zip.h"
 
-#include <structs/zip.h>
+#include "filesystem.h"
 
 class ZipEntry;
 

@@ -20,27 +20,25 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
+#include "../prefab/curve.h"
+#include "../prefab/intersection.h"
+#include "../prefab/map_point.h"
+#include "../prefab/node.h"
+#include "../prefab/semaphore.h"
+#include "../prefab/sign.h"
+#include "../prefab/spawn_point.h"
+#include "../prefab/terrain_point_variant.h"
+#include "../prefab/trigger_point.h"
+#include "../structs/ppd_0x15.h"
+#include "../structs/ppd_0x16.h"
+#include "../structs/ppd_0x17.h"
 
 #include "prefab.h"
-
-#include <fs/file.h>
-#include <fs/uberfilesystem.h>
-#include <fs/sysfilesystem.h>
-
-#include <structs/ppd_0x15.h>
-#include <structs/ppd_0x16.h>
-#include <structs/ppd_0x17.h>
-
-#include <prefab/node.h>
-#include <prefab/curve.h>
-#include <prefab/sign.h>
-#include <prefab/semaphore.h>
-#include <prefab/spawn_point.h>
-#include <prefab/terrain_point_variant.h>
-#include <prefab/map_point.h>
-#include <prefab/trigger_point.h>
-#include <prefab/intersection.h>
 
 using namespace prism;
 

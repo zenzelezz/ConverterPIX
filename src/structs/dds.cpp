@@ -20,14 +20,12 @@
  *
  *****************************************************************************/
 
-#pragma once
+#include "../prerequisites.h"
 
-#include <prerequisites.h>
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
 
 #include "dds.h"
-
-#include <fs/file.h>
-#include <fs/sysfilesystem.h>
 
 namespace dds
 {

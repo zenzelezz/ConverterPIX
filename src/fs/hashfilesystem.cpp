@@ -20,15 +20,14 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
 
-#include "hashfilesystem.h"
+#include "../utils/string_tokenizer.h"
 
-#include "sysfilesystem.h"
 #include "file.h"
+#include "hashfilesystem.h"
 #include "hashfs_file.h"
-
-#include <utils/string_tokenizer.h>
+#include "sysfilesystem.h"
 
 HashFileSystem::HashFileSystem(const String &root)
 {

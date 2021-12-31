@@ -22,10 +22,10 @@
 
 #pragma once
 
-#include <math/vector.h>
-#include <math/matrix.h>
-#include <math/quaternion.h>
-#include <utils/token.h>
+#include "../math/matrix.h"
+#include "../math/quaternion.h"
+#include "../math/vector.h"
+#include "../utils/token.h"
 
 #pragma pack(push, 1)
 

@@ -20,16 +20,14 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
-
-#include "filesystem.h"
-
-#include "sysfilesystem.h"
-#include "uberfilesystem.h"
-#include "hashfilesystem.h"
-#include "zipfilesystem.h"
+#include "../prerequisites.h"
 
 #include "file.h"
+#include "filesystem.h"
+#include "hashfilesystem.h"
+#include "sysfilesystem.h"
+#include "uberfilesystem.h"
+#include "zipfilesystem.h"
 
 FileSystem::FileSystem()
 {

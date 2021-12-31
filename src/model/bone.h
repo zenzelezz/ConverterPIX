@@ -22,9 +22,9 @@
 
 #pragma once
 
-#include <math/vector.h>
-#include <math/matrix.h>
-#include <math/quaternion.h>
+#include "../math/matrix.h"
+#include "../math/quaternion.h"
+#include "../math/vector.h"
 
 class Bone
 {

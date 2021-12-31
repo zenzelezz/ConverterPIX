@@ -20,10 +20,9 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
 
 #include "sysfilesystem.h"
-
 #include "sysfs_file.h"
 
 SysFileSystem::SysFileSystem(const String &root)

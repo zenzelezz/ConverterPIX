@@ -20,9 +20,9 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include <city.h>
 
-#include <cityhash/city.h>
+#include "prerequisites.h"
 
 double s2lin(double x)
 {

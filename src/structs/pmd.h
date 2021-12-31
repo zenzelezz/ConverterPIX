@@ -22,7 +22,7 @@
 
 #pragma once
 
-#include <utils/token.h>
+#include "../utils/token.h"
 
 #pragma pack(push, 1)
 

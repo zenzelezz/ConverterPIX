@@ -20,14 +20,14 @@
  *
  *****************************************************************************/
 
-#include <prerequisites.h>
+#include "../prerequisites.h"
+
+#include "../fs/file.h"
+#include "../fs/sysfilesystem.h"
+#include "../fs/uberfilesystem.h"
 
 #include "collision.h"
-
-#include <model/model.h>
-#include <fs/file.h>
-#include <fs/uberfilesystem.h>
-#include <fs/sysfilesystem.h>
+#include "model.h"
 
 bool Collision::load(Model *const model, String filePath)
 {
