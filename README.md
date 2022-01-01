@@ -2,6 +2,22 @@
 
 ---
 
+To compile this project, do something roughly like:
+
+```sh
+mkdir build\cmake
+cd build\cmake
+cmake -DCITYHASH_PREFIX=... -DFMT_PREFIX=... -DGLM_PREFIX=... -DZLIB_PREFIX=... ..\..
+# If you are on *nix
+cmake --build .
+# If you are on Windows
+cmake --build . --target ALL_BUILD --config Release
+# Finally
+cmake --install .
+```
+
+---
+
 
 **ConverterPIX**
 ------------

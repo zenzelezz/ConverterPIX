@@ -66,16 +66,17 @@ locate_module_path("fmt"      "format.h" "INCLUDE_DIR")
 locate_module_path("glm"      "glm.hpp"  "INCLUDE_DIR")
 locate_module_path("zlib"     "zlib.h"   "INCLUDE_DIR")
 
+# GLM is special in that it does not use an /include folder
 string(REGEX REPLACE "(.*/include)[\\/]?.*[\\/]city.h"   "\\1" CITYHASH_INCLUDE_DIR "${CITYHASH_INCLUDE_DIR}")
 string(REGEX REPLACE "(.*/include)[\\/]?.*[\\/]format.h" "\\1" FMT_INCLUDE_DIR      "${FMT_INCLUDE_DIR}")
-string(REGEX REPLACE "(.*/include)[\\/]?.*[\\/]glm.hpp"  "\\1" GLM_INCLUDE_DIR      "${GLM_INCLUDE_DIR}")
+string(REGEX REPLACE "(.*/)[\\/]?.*[\\/]glm.hpp"         "\\1" GLM_INCLUDE_DIR      "${GLM_INCLUDE_DIR}")
 string(REGEX REPLACE "(.*/include)[\\/]?.*[\\/]zlib.h"   "\\1" ZLIB_INCLUDE_DIR     "${ZLIB_INCLUDE_DIR}")
 
 # Find libraries
 if(WIN32)
-    locate_module_path("CityHash" "city.lib" "LIB_PATH")
-    locate_module_path("glm"      "glm.lib"  "LIB_PATH")
-    locate_module_path("zlib"     "zlib.lib" "LIB_PATH")
+    locate_module_path("CityHash" "Cityhash.lib"   "LIB_PATH")
+    locate_module_path("fmt"      "fmt.lib"        "LIB_PATH")
+    locate_module_path("zlib"     "zlibstatic.lib" "LIB_PATH")
 else()
     locate_module_path("CityHash" "libcityhash.a" "LIB_PATH")
     locate_module_path("fmt"      "libfmt.a"      "LIB_PATH")
