@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/model/part.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /model/part.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -25,11 +25,11 @@
 class Part
 {
 public:
-	String m_name;
-	uint32_t m_locatorCount = 0;
-	uint32_t m_locatorId = 0; // start index
-	uint32_t m_pieceCount = 0;
-	uint32_t m_pieceId = 0; // start index
+    String m_name;
+    uint32_t m_locatorCount = 0;
+    uint32_t m_locatorId = 0; // start index
+    uint32_t m_pieceCount = 0;
+    uint32_t m_pieceId = 0; // start index
 };
 
 /* eof */

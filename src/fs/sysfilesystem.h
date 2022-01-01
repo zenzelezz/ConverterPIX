@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/fs/sysfilesystem.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /fs/sysfilesystem.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -27,22 +27,22 @@
 class SysFileSystem : public FileSystem
 {
 public:
-	SysFileSystem(const String &root);
-	virtual ~SysFileSystem();
+    SysFileSystem(const String &root);
+    virtual ~SysFileSystem();
 
-	virtual String root() const override;
-	virtual String name() const override;
-	virtual UniquePtr<File> open(const String &filename, FsOpenMode mode) override;
-	virtual bool mkdir(const String &directory) override;
-	virtual bool rmdir(const String &directory) override;
-	virtual bool exists(const String &filename) override;
-	virtual bool dirExists(const String &dirpath) override;
-	virtual UniquePtr<List<Entry>> readDir(const String &path, bool absolutePaths, bool recursive) override;
+    virtual String root() const override;
+    virtual String name() const override;
+    virtual UniquePtr<File> open(const String &filename, FsOpenMode mode) override;
+    virtual bool mkdir(const String &directory) override;
+    virtual bool rmdir(const String &directory) override;
+    virtual bool exists(const String &filename) override;
+    virtual bool dirExists(const String &dirpath) override;
+    virtual UniquePtr<List<Entry>> readDir(const String &path, bool absolutePaths, bool recursive) override;
 
-	String getError() const;
+    String getError() const;
 
 private:
-	String m_root; // does not contain / at end
+    String m_root; // does not contain / at end
 };
 
 /* eof */

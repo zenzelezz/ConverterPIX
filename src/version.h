@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/version.h
+ *  Project:    ConverterPIX @ Core
+ *  File:        /version.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -22,9 +22,9 @@
 
 #pragma once
 
-#define VERSION				"1.0"
-#define PROG_NAME			"ConverterPIX"
+#define VERSION               "1.0"
+#define PROG_NAME             "ConverterPIX (modified by zenzelezz)"
 
-#define STRING_VERSION		PROG_NAME " v" VERSION
+#define STRING_VERSION        PROG_NAME " v" VERSION
 
 /* eof */

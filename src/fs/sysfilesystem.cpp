@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/fs/sysfilesystem.cpp
+ *  Project:    ConverterPIX @ Core
+ *  File:       /fs/sysfilesystem.cpp
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -26,7 +26,7 @@
 #include "sysfs_file.h"
 
 SysFileSystem::SysFileSystem(const String &root)
-	: m_root(root)
+    : m_root(root)
 {
 }
 
@@ -36,176 +36,176 @@ SysFileSystem::~SysFileSystem()
 
 String SysFileSystem::root() const
 {
-	return m_root;
+    return m_root;
 }
 
 String SysFileSystem::name() const
 {
-	return "sysfs";
+    return "sysfs";
 }
 
 UniquePtr<File> SysFileSystem::open(const String &filename, FsOpenMode mode)
 {
-	const String smode =
-		String(mode & read ? "r" : "")
-		+ (mode & write ? "w" : "")
-		+ (mode & append ? "a" : "")
-		+ (mode & binary ? "b" : "")
-		+ (mode & update ? "+" : "");
+    const String smode =
+        String(mode & read ? "r" : "")
+        + (mode & write ? "w" : "")
+        + (mode & append ? "a" : "")
+        + (mode & binary ? "b" : "")
+        + (mode & update ? "+" : "");
 
-	FILE *fp = fopen((m_root + filename).c_str(), smode.c_str());
-	if (!fp)
-	{
-		if (!dirExists(directory(filename)) && (mode & write))
-		{
-			if (mkdir(directory(filename)))
-			{
-				fp = fopen((m_root + filename).c_str(), smode.c_str());
-				if (!fp)
-				{
-					return UniquePtr<File>();
-				}
-			}
-			else
-			{
-				return UniquePtr<File>();
-			}
-		}
-		else
-		{
-			return UniquePtr<File>();
-		}
-	}
+    FILE *fp = fopen((m_root + filename).c_str(), smode.c_str());
+    if (!fp)
+    {
+        if (!dirExists(directory(filename)) && (mode & write))
+        {
+            if (mkdir(directory(filename)))
+            {
+                fp = fopen((m_root + filename).c_str(), smode.c_str());
+                if (!fp)
+                {
+                    return UniquePtr<File>();
+                }
+            }
+            else
+            {
+                return UniquePtr<File>();
+            }
+        }
+        else
+        {
+            return UniquePtr<File>();
+        }
+    }
 
-	auto file = std::make_unique<SysFsFile>();
-	file->m_fp = fp;
-	fseek(file->m_fp, 0, SEEK_SET);
-	return std::move(file);
+    auto file = std::make_unique<SysFsFile>();
+    file->m_fp = fp;
+    fseek(file->m_fp, 0, SEEK_SET);
+    return std::move(file);
 }
 
 bool SysFileSystem::mkdir(const String &dir)
 {
-	String dirr(m_root + dir.c_str());
-	std::replace_if(dirr.begin(), dirr.end(), [](char ch)->bool { return ch == '\\'; }, '/');
+    String dirr(m_root + dir.c_str());
+    std::replace_if(dirr.begin(), dirr.end(), [](char ch)->bool { return ch == '\\'; }, '/');
 
-	if (dirExists(dirr.c_str())) {
-		return true;
-	}
-	dirr += '/';
-	for (size_t pos = dirr.find('/', dirr.find('/') + 1); pos != -1; pos = dirr.find('/', pos + 1))
-	{
-		if (!dirExists(dirr.substr(0, pos).c_str()))
-		{
-		#ifdef _WIN32
-			if (::mkdir(dirr.substr(0, pos).c_str()) != 0)
-				return false;
-		#else
-			if (::mkdir(dirr.substr(0, pos).c_str(), 0775) != 0)
-				return false;
-		#endif
-		}
-	}
-	return true;
+    if (dirExists(dirr.c_str())) {
+        return true;
+    }
+    dirr += '/';
+    for (size_t pos = dirr.find('/', dirr.find('/') + 1); pos != -1; pos = dirr.find('/', pos + 1))
+    {
+        if (!dirExists(dirr.substr(0, pos).c_str()))
+        {
+        #ifdef _WIN32
+            if (::mkdir(dirr.substr(0, pos).c_str()) != 0)
+                return false;
+        #else
+            if (::mkdir(dirr.substr(0, pos).c_str(), 0775) != 0)
+                return false;
+        #endif
+        }
+    }
+    return true;
 }
 
 bool SysFileSystem::rmdir(const String &directory)
 {
-	return false;
+    return false;
 }
 
 bool SysFileSystem::exists(const String &filename)
 {
-	FILE *fp = fopen((m_root + filename).c_str(), "rb");
-	if (fp)
-	{
-		fclose(fp);
-		return true;
-	}
-	return false;
+    FILE *fp = fopen((m_root + filename).c_str(), "rb");
+    if (fp)
+    {
+        fclose(fp);
+        return true;
+    }
+    return false;
 }
 
 bool SysFileSystem::dirExists(const String &dirpath)
 {
-	struct stat buffer;
-	return (stat((m_root + dirpath).c_str(), &buffer) == 0 && ((buffer.st_mode & S_IFDIR) != 0));
+    struct stat buffer;
+    return (stat((m_root + dirpath).c_str(), &buffer) == 0 && ((buffer.st_mode & S_IFDIR) != 0));
 }
 
 auto SysFileSystem::readDir(const String &directory, bool absolutePaths, bool recursive) -> UniquePtr<List<Entry>>
 {
-	String directoryNoSlash = removeSlashAtEnd(directory);
+    String directoryNoSlash = removeSlashAtEnd(directory);
 
 #ifdef _WIN32
-	HANDLE dir;
-	WIN32_FIND_DATA fileData;
+    HANDLE dir;
+    WIN32_FIND_DATA fileData;
 
-	if ((dir = FindFirstFileA((m_root + directoryNoSlash + "/*").c_str(), &fileData)) == INVALID_HANDLE_VALUE)
-		return UniquePtr<List<Entry>>();
+    if ((dir = FindFirstFileA((m_root + directoryNoSlash + "/*").c_str(), &fileData)) == INVALID_HANDLE_VALUE)
+        return UniquePtr<List<Entry>>();
 
-	auto result = std::make_unique<List<Entry>>();
-	do
-	{
-		const String fileName = fileData.cFileName;
-		const String fullFileName = directoryNoSlash + "/" + fileName;
+    auto result = std::make_unique<List<Entry>>();
+    do
+    {
+        const String fileName = fileData.cFileName;
+        const String fullFileName = directoryNoSlash + "/" + fileName;
 
-		if (fileName[0] == '.')
-			continue;
+        if (fileName[0] == '.')
+            continue;
 
-		const bool isDirectory = !!(fileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
-		if (isDirectory)
-		{
-			if (recursive)
-			{
-				auto subdir = readDir(fullFileName, absolutePaths, recursive);
-				if (subdir)
-				{
-					result->insert(result->end(), subdir->begin(), subdir->end());
-				}
-			}
-		}
-		result->push_back(Entry((absolutePaths ? fullFileName : fileName), isDirectory, false, this));
-	} while (FindNextFileA(dir, &fileData));
-	FindClose(dir);
-	return result;
+        const bool isDirectory = !!(fileData.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY);
+        if (isDirectory)
+        {
+            if (recursive)
+            {
+                auto subdir = readDir(fullFileName, absolutePaths, recursive);
+                if (subdir)
+                {
+                    result->insert(result->end(), subdir->begin(), subdir->end());
+                }
+            }
+        }
+        result->push_back(Entry((absolutePaths ? fullFileName : fileName), isDirectory, false, this));
+    } while (FindNextFileA(dir, &fileData));
+    FindClose(dir);
+    return result;
 #else
-	auto result = std::make_unique<List<Entry>>();
-	DIR *dir;
-	struct dirent *ent;
-	struct stat st;
+    auto result = std::make_unique<List<Entry>>();
+    DIR *dir;
+    struct dirent *ent;
+    struct stat st;
 
-	dir = opendir(directoryNoSlash.c_str());
-	while ((ent = readdir(dir)) != 0)
-	{
-		const String fileName = ent->d_name;
-		const String fullFileName = directoryNoSlash + "/" + fileName;
+    dir = opendir(directoryNoSlash.c_str());
+    while ((ent = readdir(dir)) != 0)
+    {
+        const String fileName = ent->d_name;
+        const String fullFileName = directoryNoSlash + "/" + fileName;
 
-		if (fileName[0] == '.')
-			continue;
+        if (fileName[0] == '.')
+            continue;
 
-		if (stat(fullFileName.c_str(), &st) == -1)
-			continue;
+        if (stat(fullFileName.c_str(), &st) == -1)
+            continue;
 
-		const bool isDirectory = !!(st.st_mode & S_IFDIR);
-		if (isDirectory)
-		{
-			if (recursive)
-			{
-				auto subdir = readDir(fullFileName, absolutePaths, recursive);
-				if (subdir)
-				{
-					result->insert(result->begin(), subdir->begin(), subdir->end());
-				}
-			}
-		}
-		result->push_back(Entry((absolutePaths ? fullFileName : fileName), isDirectory, false, this));
-	}
-	closedir(dir);
-	return result;
+        const bool isDirectory = !!(st.st_mode & S_IFDIR);
+        if (isDirectory)
+        {
+            if (recursive)
+            {
+                auto subdir = readDir(fullFileName, absolutePaths, recursive);
+                if (subdir)
+                {
+                    result->insert(result->begin(), subdir->begin(), subdir->end());
+                }
+            }
+        }
+        result->push_back(Entry((absolutePaths ? fullFileName : fileName), isDirectory, false, this));
+    }
+    closedir(dir);
+    return result;
 #endif
 }
 
 String SysFileSystem::getError() const
 {
-	return strerror(errno);
+    return strerror(errno);
 }
 
 /* eof */

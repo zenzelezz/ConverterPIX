@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/resource_lib.cpp
+ *  Project:    ConverterPIX @ Core
+ *  File:       /resource_lib.cpp
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -29,25 +29,25 @@
 
 auto ResourceLibrary::obtain(String tobjfile) -> Entry
 {
-	if (m_tobjs.find(tobjfile) == m_tobjs.end())
-	{
-		Entry texobj = std::make_shared<TextureObject>();
-		if (texobj->load(tobjfile))
-		{
-			m_tobjs.insert({ tobjfile.c_str(), texobj });
-		}
-		else
-		{
-			warning("tobj", tobjfile, "Unable to load!");
-			return nullptr;
-		}
-	}
-	return m_tobjs[tobjfile];
+    if (m_tobjs.find(tobjfile) == m_tobjs.end())
+    {
+        Entry texobj = std::make_shared<TextureObject>();
+        if (texobj->load(tobjfile))
+        {
+            m_tobjs.insert({ tobjfile.c_str(), texobj });
+        }
+        else
+        {
+            warning("tobj", tobjfile, "Unable to load!");
+            return nullptr;
+        }
+    }
+    return m_tobjs[tobjfile];
 }
 
 void ResourceLibrary::destroy()
 {
-	m_tobjs.clear();
+    m_tobjs.clear();
 }
 
 /* eof */

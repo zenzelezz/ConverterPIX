@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/prefab/semaphore.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /prefab/semaphore.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -28,15 +28,15 @@
 class Semaphore
 {
 private:
-	Float3 m_position;
-	Quaternion m_rotation;
-	u32 m_type;
-	u32 m_semaphoreId;
-	Float4 m_intervals;
-	float m_cycle;
-	String m_profile;
+    Float3 m_position;
+    Quaternion m_rotation;
+    u32 m_type;
+    u32 m_semaphoreId;
+    Float4 m_intervals;
+    float m_cycle;
+    String m_profile;
 
-	friend Prefab;
+    friend Prefab;
 };
 
 /* eof */

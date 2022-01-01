@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/structs/hashfs.h
+ *  Project:    ConverterPIX @ Core
+ *  File:        /structs/hashfs.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -25,37 +25,37 @@
 
 namespace prism
 {
-	struct hashfs_header_t
-	{
-		u32 m_magic;			// +0
-		u16 m_version;			// +4
-		u16 m_salt;				// +6
-		u32 m_hash_method;		// +8
-		u32 m_entries_count;	// +12
-		u32 m_start_offset;		// +16
-		pad(12);				// +20
-		// +32 --
-		static constexpr u32 SUPPORTED_VERSION = 0x01;
-	};	ENSURE_SIZE(hashfs_header_t, 32);
+    struct hashfs_header_t
+    {
+        u32 m_magic;         // +0
+        u16 m_version;       // +4
+        u16 m_salt;          // +6
+        u32 m_hash_method;   // +8
+        u32 m_entries_count; // +12
+        u32 m_start_offset;  // +16
+        pad(12);             // +20
+        // +32 --
+        static constexpr u32 SUPPORTED_VERSION = 0x01;
+    };    ENSURE_SIZE(hashfs_header_t, 32);
 
-	enum hashfs_entry_flags_t : u32
-	{
-		HASHFS_DIR			= (1 << 0),
-		HASHFS_COMPRESSED	= (1 << 1),
-		HASHFS_VERIFY		= (1 << 2),
-		HASHFS_ENCRYPTED	= (1 << 3)
-	};
+    enum hashfs_entry_flags_t : u32
+    {
+        HASHFS_DIR        = (1 << 0),
+        HASHFS_COMPRESSED = (1 << 1),
+        HASHFS_VERIFY     = (1 << 2),
+        HASHFS_ENCRYPTED  = (1 << 3)
+    };
 
-	struct hashfs_entry_t
-	{
-		u64 m_hash;				// +0
-		u64 m_offset;			// +8
-		u32 m_flags;			// +16
-		u32 m_crc;				// +20
-		u32 m_size;				// +24
-		u32 m_compressed_size;	// +28
-		// +32 --
-	};	ENSURE_SIZE(hashfs_entry_t, 32);
+    struct hashfs_entry_t
+    {
+        u64 m_hash;            // +0
+        u64 m_offset;          // +8
+        u32 m_flags;           // +16
+        u32 m_crc;             // +20
+        u32 m_size;            // +24
+        u32 m_compressed_size; // +28
+        // +32 --
+    };    ENSURE_SIZE(hashfs_entry_t, 32);
 } // namespace prism
 
 #pragma pack(pop)

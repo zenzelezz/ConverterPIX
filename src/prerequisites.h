@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/prerequisites.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /prerequisites.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -74,72 +74,72 @@
 
 #include <zlib.h>
 
-using String		= std::string;
-using WString		= std::wstring;
+using String  = std::string;
+using WString = std::wstring;
 
-using StringStream	= std::stringstream;
+using StringStream = std::stringstream;
 
 template < typename T >
-using Array			= std::vector<T>;
+using Array = std::vector<T>;
 
 template < typename T, size_t N >
-using SizedArray	= std::array<T, N>;
+using SizedArray = std::array<T, N>;
 
 template < typename T >
-using List			= std::list<T>;
+using List = std::list<T>;
 
 template < typename KEY_TYPE, typename VALUE_TYPE >
-using Map			= std::map<KEY_TYPE, VALUE_TYPE>;
+using Map = std::map<KEY_TYPE, VALUE_TYPE>;
 
 template < typename KEY_TYPE, typename VALUE_TYPE >
-using UnorderedMap	= std::unordered_map<KEY_TYPE, VALUE_TYPE>;
+using UnorderedMap = std::unordered_map<KEY_TYPE, VALUE_TYPE>;
 
 template < typename T >
-using SharedPtr		= std::shared_ptr<T>;
+using SharedPtr = std::shared_ptr<T>;
 
 template < typename T >
-using UniquePtr		= std::unique_ptr<T>;
+using UniquePtr = std::unique_ptr<T>;
 
 template < typename FIRST, typename SECOND >
-using Pair			= std::pair<FIRST, SECOND>;
+using Pair = std::pair<FIRST, SECOND>;
 
 #include "callbacks.h"
 
-#define TAB		"     "
-#define SEOL	"\n"
-#define FLT_FT	"&%08x"
+#define TAB    "     "
+#define SEOL   "\n"
+#define FLT_FT "&%08x"
 
 #ifndef MAX_PATH
 #define MAX_PATH 260
 #endif
 
-#define ENABLE_FLAG(variable, flag)		variable |= flag
-#define DISABLE_FLAG(variable, flag)	variable &= ~flag
-#define CHECK_FLAG(variable, flag)		(variable & flag)
+#define ENABLE_FLAG(variable, flag)  variable |= flag
+#define DISABLE_FLAG(variable, flag) variable &= ~flag
+#define CHECK_FLAG(variable, flag)   (variable & flag)
 
-#define STRINGIZE_DETAIL(x)				#x
-#define STRINGIZE(x)					STRINGIZE_DETAIL(x)
-#define CONCAT2(prefix, suffix)			prefix##suffix
-#define CONCAT(prefix, suffix)			CONCAT2(prefix, suffix)
-#define STATIC_CHECK(expr)				typedef int CONCAT(some_requirement_failed_at_, __LINE__)[(expr) ? 1 : -1]
+#define STRINGIZE_DETAIL(x)     #x
+#define STRINGIZE(x)            STRINGIZE_DETAIL(x)
+#define CONCAT2(prefix, suffix) prefix##suffix
+#define CONCAT(prefix, suffix)  CONCAT2(prefix, suffix)
+#define STATIC_CHECK(expr)      typedef int CONCAT(some_requirement_failed_at_, __LINE__)[(expr) ? 1 : -1]
 
-#define pad(size)		uint8_t CONCAT(pad_, __LINE__)[size]
-#define pad_bool(name)	uint8_t pad_bool_##name[3]
+#define pad(size)      uint8_t CONCAT(pad_, __LINE__)[size]
+#define pad_bool(name) uint8_t pad_bool_##name[3]
 
-#define bool32(name)	scs_bool name; pad_bool(name)
+#define bool32(name) scs_bool name; pad_bool(name)
 
 #define ENSURE_SIZE(structure, expected) static_assert(sizeof(structure) == expected, "Invalid size")
 #define COMMA ,
 
 namespace prism
 {
-	template <typename T, size_t N>
-	class vec_t;
-	template <typename T, size_t N>
-	class mat_sq_t;
-	class token_t;
+    template <typename T, size_t N>
+    class vec_t;
+    template <typename T, size_t N>
+    class mat_sq_t;
+    class token_t;
 
-	u64 city_hash_64(const char *const data, size_t size);
+    u64 city_hash_64(const char *const data, size_t size);
 } // namespace prism
 
 class FileSystem;
@@ -199,7 +199,7 @@ double lin2s(double x);
 
 inline uint32_t flh(float x)
 {
-	return *(uint32_t *)(&x);
+    return *(uint32_t *)(&x);
 }
 
 String removeSpaces(String str);
@@ -242,28 +242,28 @@ String valueToQuotedString(const char *const value);
 
 #ifndef MAKEFOURCC
 #define MAKEFOURCC(ch0, ch1, ch2, ch3) \
-	((unsigned)(unsigned char)(ch0) | ((unsigned)(unsigned char)(ch1) << 8) |   \
-	((unsigned)(unsigned char)(ch2) << 16) | ((unsigned)(unsigned char)(ch3) << 24 ))
+    ((unsigned)(unsigned char)(ch0) | ((unsigned)(unsigned char)(ch1) << 8) |   \
+    ((unsigned)(unsigned char)(ch2) << 16) | ((unsigned)(unsigned char)(ch3) << 24 ))
 #endif
 
 template < typename T >
 struct IsIntegral {
-	enum { value = std::numeric_limits<T>::is_integer };
+    enum { value = std::numeric_limits<T>::is_integer };
 };
 
 template < typename T >
 struct IsFloatingPoint {
-	enum {
-		value = std::numeric_limits<T>::is_specialized &&
-		!std::numeric_limits<T>::is_integer
-	};
+    enum {
+        value = std::numeric_limits<T>::is_specialized &&
+        !std::numeric_limits<T>::is_integer
+    };
 };
 
 //template < typename T >
 //struct IsBoolean {
-//	enum {
-//		value = st::is_same<
-//	};
+//    enum {
+//        value = st::is_same<
+//    };
 //};
 
 template < bool C, typename T = void >

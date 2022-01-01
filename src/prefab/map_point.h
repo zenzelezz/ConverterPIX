@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/prefab/map_point.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /prefab/map_point.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -28,13 +28,13 @@
 class MapPoint
 {
 private:
-	u32 m_mapVisualFlags;
-	u32 m_mapNavFlags;
-	Float3 m_position;
-	i32 m_neighbour[6];
-	u32 m_neighbourCount;
+    u32 m_mapVisualFlags;
+    u32 m_mapNavFlags;
+    Float3 m_position;
+    i32 m_neighbour[6];
+    u32 m_neighbourCount;
 
-	friend Prefab;
+    friend Prefab;
 };
 
 /* eof */

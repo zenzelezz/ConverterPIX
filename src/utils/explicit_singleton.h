@@ -1,14 +1,14 @@
 /******************************************************************************
  *
- *  Project:	ConverterPIX @ Core
- *  File:		/utils/explicit_singleton.h
+ *  Project:    ConverterPIX @ Core
+ *  File:       /utils/explicit_singleton.h
  *
- *		  _____                          _            _____ _______   __
- *		 / ____|                        | |          |  __ \_   _\ \ / /
- *		| |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
- *		| |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
- *		| |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
- *		 \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
+ *          _____                          _            _____ _______   __
+ *         / ____|                        | |          |  __ \_   _\ \ / /
+ *        | |     ___  _ ____   _____ _ __| |_ ___ _ __| |__) || |  \ V /
+ *        | |    / _ \| '_ \ \ / / _ \ '__| __/ _ \ '__|  ___/ | |   > <
+ *        | |___| (_) | | | \ V /  __/ |  | ||  __/ |  | |    _| |_ / . \
+ *         \_____\___/|_| |_|\_/ \___|_|   \__\___|_|  |_|   |_____/_/ \_\
  *
  *
  *  Copyright (C) 2017 Michal Wojtowicz.
@@ -26,23 +26,23 @@ template < typename T >
 class ExplicitSingleton
 {
 private:
-	static T *s_instance;
+    static T *s_instance;
 public:
-	ExplicitSingleton()
-	{
-		s_instance = static_cast<T *>(this);
-	}
-	~ExplicitSingleton()
-	{
-		if (s_instance == this)
-		{
-			s_instance = nullptr;
-		}
-	}
-	static T *Get()
-	{
-		return s_instance;
-	}
+    ExplicitSingleton()
+    {
+        s_instance = static_cast<T *>(this);
+    }
+    ~ExplicitSingleton()
+    {
+        if (s_instance == this)
+        {
+            s_instance = nullptr;
+        }
+    }
+    static T *Get()
+    {
+        return s_instance;
+    }
 };
 
 template < typename T >
