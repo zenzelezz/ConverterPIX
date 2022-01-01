@@ -53,7 +53,6 @@ function(locate_module_path module filename suffix)
     )
 
     if(NOT FILE_PATH)
-        message(FATAL_ERROR ">>>${PREFIX}/*${filename}<<<")
         message(FATAL_ERROR "Unable to locate include path for ${module}")
     endif()
 
